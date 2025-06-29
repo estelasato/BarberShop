@@ -150,12 +150,6 @@ C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\s
 C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\staticwebassets\msbuild.BarberShop.API.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\staticwebassets\msbuild.BarberShop.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\staticwebassets\msbuild.build.BarberShop.API.props
-C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BarberShop.API.props
-C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BarberShop.API.props
-C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\BarberSh.33B6D166.Up2Date
 C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\BarberShop.API.dll
@@ -163,3 +157,5 @@ C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\r
 C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\BarberShop.API.pdb
 C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\BarberShop.API.genruntimeconfig.cache
 C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\ref\BarberShop.API.dll
+C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\BarberShop.API.sourcelink.json
+C:\Users\jamel\source\repos\BarberShop\backend\BarberShop.API\obj\Debug\net8.0\staticwebassets.build.json.cache

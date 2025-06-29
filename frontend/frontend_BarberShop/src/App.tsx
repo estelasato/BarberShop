@@ -8,6 +8,7 @@ import Funcionarios from "@/features/funcionarios/Funcionarios"
 import FormasPagamento from "@/features/formasPagamento/FormasPagamento"
 import CondicoesPagamento from "@/features/condicaoPagamento/CondicaoPagamento"
 import Fornecedores from "@/features/fornecedores/Fornecedores"
+import Clientes from "@/features/clientes/Clientes"
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/formas-pagamento" element={<FormasPagamento />} />
           <Route path="/condicoes-pagamento" element={<CondicoesPagamento />} />
           <Route path="/fornecedores" element={<Fornecedores />} />
+          <Route path="/clientes" element={<Clientes />} />
         </Routes>
       </RootLayout>
     </Router>

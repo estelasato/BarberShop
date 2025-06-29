@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/alert-dialog"
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter,
-  DialogClose, DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog"
 import { Switch } from "@/components/ui/switch"
 
@@ -32,7 +32,6 @@ export default function FormasPagamento() {
   const [editing, setEditing] = useState<FormaPagamento | null>(null)
   const [form, setForm] = useState({
     descricao: "",
-    tipo: "",
     ativo: true,
   })
 
@@ -59,13 +58,13 @@ export default function FormasPagamento() {
 
   const openCreate = () => {
     setEditing(null)
-    setForm({ descricao: "", tipo: "", ativo: true })
+    setForm({ descricao: "", ativo: true })
     setModalOpen(true)
   }
 
   const openEdit = (fp: FormaPagamento) => {
     setEditing(fp)
-    setForm({ descricao: fp.descricao, tipo: fp.tipo, ativo: fp.ativo })
+    setForm({ descricao: fp.descricao, ativo: fp.ativo })
     setModalOpen(true)
   }
 
@@ -102,7 +101,6 @@ export default function FormasPagamento() {
                 <TableRow>
                   <TableHead>ID</TableHead>
                   <TableHead>Descrição</TableHead>
-                  <TableHead>Tipo</TableHead>
                   <TableHead>Ativo</TableHead>
                   <TableHead>Ações</TableHead>
                 </TableRow>
@@ -112,7 +110,6 @@ export default function FormasPagamento() {
                   <TableRow key={fp.id}>
                     <TableCell>{fp.id}</TableCell>
                     <TableCell>{fp.descricao}</TableCell>
-                    <TableCell>{fp.tipo}</TableCell>
                     <TableCell>{fp.ativo ? "Sim" : "Não"}</TableCell>
                     <TableCell className="flex gap-2">
                       <Button variant="outline" size="icon" onClick={() => openEdit(fp)}>
@@ -152,7 +149,6 @@ export default function FormasPagamento() {
         </CardContent>
       </Card>
 
-      {/* modal criar/editar */}
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
         <DialogContent className="max-w-xl">
           <DialogHeader>
@@ -166,14 +162,6 @@ export default function FormasPagamento() {
                 placeholder="Nome da forma"
                 value={form.descricao}
                 onChange={(e) => setForm({ ...form, descricao: e.target.value })}
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1">Tipo</label>
-              <Input
-                placeholder="avista / credito / debito..."
-                value={form.tipo}
-                onChange={(e) => setForm({ ...form, tipo: e.target.value })}
               />
             </div>
             <div className="flex items-center gap-2">
