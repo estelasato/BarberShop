@@ -29,6 +29,7 @@ builder.Services.AddScoped<PaisRepository>();
 builder.Services.AddScoped<EstadoRepository>();
 builder.Services.AddScoped<CidadeRepository>();
 builder.Services.AddScoped<FuncionarioRepository>();
+builder.Services.AddScoped<ClienteRepository>();
 builder.Services.AddScoped<FornecedorRepository>();
 builder.Services.AddScoped<FormaPagamentoRepository>();
 

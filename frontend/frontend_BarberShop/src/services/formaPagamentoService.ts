@@ -7,13 +7,11 @@ export interface FormaPagamento {
   descricao: string
   dataCriacao: string
   dataAtualizacao: string
-  tipo: string 
   ativo: boolean
 }
 
 export interface CreateFormaPagamentoDto {
   descricao: string
-  tipo: string
   ativo: boolean
 }
 export type UpdateFormaPagamentoDto = CreateFormaPagamentoDto
