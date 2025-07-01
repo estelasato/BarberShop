@@ -17,7 +17,6 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Plus, Search, Edit, Trash, Eye } from "lucide-react"
-
 import {
   getCidades,
   deletarCidade,
@@ -25,7 +24,6 @@ import {
 } from "@/services/cidadeService"
 import { getEstados, Estado } from "@/services/estadoService"
 import { getPaises, Pais } from "@/services/paisService"
-
 import { ModalCidades } from "@/components/modals/ModalCidades"
 import { ModalConfirm } from "@/components/modals/ModalConfirm"
 
@@ -34,26 +32,50 @@ export default function CidadesPage() {
   const [estados, setEstados] = useState<Estado[]>([])
   const [paises, setPaises] = useState<Pais[]>([])
   const [loading, setLoading] = useState(true)
-
   const [modalCidadeOpen, setModalCidadeOpen] = useState(false)
   const [editingCidade, setEditingCidade] = useState<Cidade | null>(null)
   const [viewOnly, setViewOnly] = useState(false)
-
   const [confirmOpen, setConfirmOpen] = useState(false)
   const [cidadeSelecionada, setCidadeSelecionada] = useState<Cidade | null>(
     null,
   )
 
   async function carregarDados() {
-    const [cData, eData, pData] = await Promise.all([
-      getCidades(),
-      getEstados(),
-      getPaises(),
-    ])
-    setCidades(cData)
-    setEstados(eData)
-    setPaises(pData)
-    setLoading(false)
+    try {
+      const results = await Promise.allSettled([
+        getCidades(),
+        getEstados(),
+        getPaises(),
+      ])
+
+      if (results[0].status === "fulfilled") {
+        setCidades(results[0].value || [])
+      } else {
+        console.error("Erro ao carregar cidades:", results[0].reason)
+        setCidades([])
+      }
+
+      if (results[1].status === "fulfilled") {
+        setEstados(results[1].value || [])
+      } else {
+        console.error("Erro ao carregar estados:", results[1].reason)
+        setEstados([])
+      }
+
+      if (results[2].status === "fulfilled") {
+        setPaises(results[2].value || [])
+      } else {
+        console.error("Erro ao carregar países:", results[2].reason)
+        setPaises([])
+      }
+    } catch (error) {
+      console.error("Falha geral ao carregar dados:", error)
+      setCidades([])
+      setEstados([])
+      setPaises([])
+    } finally {
+      setLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -108,6 +130,7 @@ export default function CidadesPage() {
         cidade={editingCidade ?? undefined}
         onSave={carregarDados}
         readOnly={viewOnly}
+        estados={estados}
       />
 
       <ModalConfirm
