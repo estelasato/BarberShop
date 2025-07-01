@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\jamel\\source\\repos\\BarberShop\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{58A42907-EF59-43E0-8A72-7C1BE7C066A2}|BarberShop.API\\BarberShop.API.csproj|c:\\users\\jamel\\source\\repos\\barbershop\\backend\\barbershop.api\\models\\createcondicaopagamentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A42907-EF59-43E0-8A72-7C1BE7C066A2}|BarberShop.API\\BarberShop.API.csproj|solutionrelative:barbershop.api\\models\\createcondicaopagamentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{58A42907-EF59-43E0-8A72-7C1BE7C066A2}|BarberShop.API\\BarberShop.API.csproj|c:\\users\\jamel\\source\\repos\\barbershop\\backend\\barbershop.api\\repository\\condicaopagamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58A42907-EF59-43E0-8A72-7C1BE7C066A2}|BarberShop.API\\BarberShop.API.csproj|solutionrelative:barbershop.api\\repository\\condicaopagamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{58A42907-EF59-43E0-8A72-7C1BE7C066A2}|BarberShop.API\\BarberShop.API.csproj|c:\\users\\jamel\\source\\repos\\barbershop\\backend\\barbershop.api\\entities\\condicaopagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58A42907-EF59-43E0-8A72-7C1BE7C066A2}|BarberShop.API\\BarberShop.API.csproj|solutionrelative:barbershop.api\\entities\\condicaopagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A42907-EF59-43E0-8A72-7C1BE7C066A2}|BarberShop.API\\BarberShop.API.csproj|c:\\users\\jamel\\source\\repos\\barbershop\\backend\\barbershop.api\\models\\createcondicaopagamentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A42907-EF59-43E0-8A72-7C1BE7C066A2}|BarberShop.API\\BarberShop.API.csproj|solutionrelative:barbershop.api\\models\\createcondicaopagamentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58A42907-EF59-43E0-8A72-7C1BE7C066A2}|BarberShop.API\\BarberShop.API.csproj|c:\\users\\jamel\\source\\repos\\barbershop\\backend\\barbershop.api\\entities\\parcelacondicaopagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -95,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "CreateCondicaoPagamentoDto.cs",
               "DocumentMoniker": "C:\\Users\\jamel\\source\\repos\\BarberShop\\backend\\BarberShop.API\\Models\\CreateCondicaoPagamentoDto.cs",
               "RelativeDocumentMoniker": "BarberShop.API\\Models\\CreateCondicaoPagamentoDto.cs",
@@ -108,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CondicaoPagamentoController.cs",
               "DocumentMoniker": "C:\\Users\\jamel\\source\\repos\\BarberShop\\backend\\BarberShop.API\\Controllers\\CondicaoPagamentoController.cs",
               "RelativeDocumentMoniker": "BarberShop.API\\Controllers\\CondicaoPagamentoController.cs",
@@ -121,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CondicaoPagamento.cs",
               "DocumentMoniker": "C:\\Users\\jamel\\source\\repos\\BarberShop\\backend\\BarberShop.API\\Entities\\CondicaoPagamento.cs",
               "RelativeDocumentMoniker": "BarberShop.API\\Entities\\CondicaoPagamento.cs",
@@ -134,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CondicaoPagamentoRepository.cs",
               "DocumentMoniker": "C:\\Users\\jamel\\source\\repos\\BarberShop\\backend\\BarberShop.API\\Repository\\CondicaoPagamentoRepository.cs",
               "RelativeDocumentMoniker": "BarberShop.API\\Repository\\CondicaoPagamentoRepository.cs",
