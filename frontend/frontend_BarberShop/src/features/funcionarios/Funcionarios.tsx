@@ -349,7 +349,7 @@ export default function Funcionarios() {
 
           <div className="grid gap-4 py-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Nome</label>
+              <label className="block text-sm font-medium mb-1">Nome*</label>
               <Input placeholder="Nome completo"
                      value={form.nomeRazaoSocial}
                      onChange={(e) => setForm({ ...form, nomeRazaoSocial: e.target.value })}/>
