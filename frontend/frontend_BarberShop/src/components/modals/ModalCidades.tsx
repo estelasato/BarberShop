@@ -14,6 +14,8 @@ import { ChevronDown, Search } from "lucide-react"
 import { Cidade, criarCidade, atualizarCidade } from "@/services/cidadeService"
 import { Estado } from "@/services/estadoService"
 import { ModalEstados } from "@/components/modals/ModalEstados"
+import { toast } from "react-toastify"
+import { CidadeSchema } from "@/validations/localizacao"
 
 type Props = {
   isOpen: boolean
@@ -66,14 +68,23 @@ export function ModalCidades({
   }
 
   async function handleSubmit() {
-    if (readOnly) return
-    if (cidade) {
-      await atualizarCidade(cidade.id, form)
-    } else {
-      await criarCidade(form)
+    try {
+      const parsed = CidadeSchema.safeParse(form)
+      if (!parsed.success) {
+        toast.error('Preencha todos os campos corretamente')
+        return
+      }
+      if (readOnly) return
+      if (cidade) {
+        await atualizarCidade(cidade.id, form)
+      } else {
+        await criarCidade(form)
+      }
+      await onSave() 
+      onOpenChange(false)
+    } catch(e) {
+      toast.error('Erro ao salvar Cidade')
     }
-    await onSave() 
-    onOpenChange(false)
   }
 
   return (
@@ -94,21 +105,22 @@ export function ModalCidades({
 
           <div className="grid gap-4 py-4">
             <Input
-              placeholder="NOME"
+              placeholder="NOME*"
               disabled={readOnly}
               className="uppercase"
               value={form.nome}
               onChange={(e) => setForm({ ...form, nome: e.target.value.toUpperCase() })}
             />
             <Input
-              placeholder="DDD"
+              maxLength={3}
+              placeholder="DDD*"
               disabled={readOnly}
               value={form.ddd}
               onChange={(e) => setForm({ ...form, ddd: e.target.value })}
             />
 
             <div>
-              <label className="block text-sm mb-1">ESTADO</label>
+              <label className="block text-sm mb-1">ESTADO*</label>
               <Dialog open={selectorOpen} onOpenChange={setSelectorOpen}>
                 <DialogTrigger asChild>
                   <Button

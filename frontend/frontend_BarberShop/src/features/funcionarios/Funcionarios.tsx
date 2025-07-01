@@ -67,6 +67,8 @@ import {
   getPaises,
   criarPais,
 } from "@/services/paisService"
+import { toast } from "react-toastify"
+import { FuncionarioSchema } from "@/validations/funcionario"
 
 export default function Funcionarios() {
   /* ---------- listagem ---------- */
@@ -144,34 +146,45 @@ export default function Funcionarios() {
   }
 
   async function salvarFuncionario() {
-    if (editing) {
-      await atualizarFuncionario(editing.id, {
-        ...editing,
-        ...form,
-        dataDemissao: editing.dataDemissao,
-        salario: Number(form.salario),
-      })
-    } else {
-      await criarFuncionario({
-        ...form,
-        tipoPessoa: "F",
-        apelidoNomeFantasia: "",
-        dataNascimentoCriacao: new Date().toISOString(),
-        cpfCnpj: "",
-        rgInscricaoEstadual: "",
-        rua: "",
-        numero: "",
-        bairro: "",
-        cep: "",
-        classificacao: "",
-        complemento: "",
-        cargaHoraria: "",
-        dataDemissao: null,
-        salario: Number(form.salario),
-      })
+    try {
+      const parsed = FuncionarioSchema.safeParse(form)
+      if (!parsed.success) {
+        toast.error('Preencha todos os campos corretamente')
+        return
+      }
+      if (editing) {
+        await atualizarFuncionario(editing.id, {
+          ...editing,
+          ...form,
+          dataDemissao: editing.dataDemissao,
+          salario: Number(form.salario),
+        })
+      } else {
+        await criarFuncionario({
+          ...form,
+          tipoPessoa: "F",
+          apelidoNomeFantasia: "",
+          dataNascimentoCriacao: new Date().toISOString(),
+          cpfCnpj: "",
+          rgInscricaoEstadual: "",
+          rua: "",
+          numero: "",
+          bairro: "",
+          cep: "",
+          classificacao: "",
+          complemento: "",
+          cargaHoraria: "",
+          dataDemissao: null,
+          salario: Number(form.salario),
+        })
+      }
+      setModalOpen(false)
+      await carregarDados()
+    } catch (error) {
+      console.error("Erro ao salvar funcionário:", error)
+      toast.error(
+        "Erro ao salvar funcionário.")
     }
-    setModalOpen(false)
-    await carregarDados()
   }
 
   async function removerFuncionario(id: number) {
@@ -342,7 +355,7 @@ export default function Funcionarios() {
                      onChange={(e) => setForm({ ...form, nomeRazaoSocial: e.target.value })}/>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Cargo</label>
+              <label className="block text-sm font-medium mb-1">Cargo*</label>
               <Input placeholder="Ex.: Barbeiro"
                      value={form.cargo}
                      onChange={(e) => setForm({ ...form, cargo: e.target.value })}/>
@@ -366,13 +379,13 @@ export default function Funcionarios() {
                      onChange={(e) => setForm({ ...form, matricula: e.target.value })}/>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Salário</label>
+              <label className="block text-sm font-medium mb-1">Salário*</label>
               <Input type="number" placeholder="0,00"
                      value={form.salario}
                      onChange={(e) => setForm({ ...form, salario: Number(e.target.value) })}/>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Data de admissão</label>
+              <label className="block text-sm font-medium mb-1">Data de admissão*</label>
               <Input type="date"
                      value={form.dataAdmissao}
                      onChange={(e) => setForm({ ...form, dataAdmissao: e.target.value })}/>
@@ -582,15 +595,15 @@ export default function Funcionarios() {
           </DialogHeader>
 
           <div className="grid grid-cols-3 gap-2">
-            <Input placeholder="Nome"
+            <Input placeholder="Nome*"
                    value={formNovoPais.nome}
                    onChange={(e) =>
                      setFormNovoPais({ ...formNovoPais, nome: e.target.value })}/>
-            <Input placeholder="Sigla" maxLength={2}
+            <Input placeholder="Sigla*" maxLength={2}
                    value={formNovoPais.sigla}
                    onChange={(e) =>
                      setFormNovoPais({ ...formNovoPais, sigla: e.target.value.toUpperCase() })}/>
-            <Input placeholder="DDI"
+            <Input placeholder="DDI*"
                    value={formNovoPais.ddi}
                    onChange={(e) =>
                      setFormNovoPais({ ...formNovoPais, ddi: e.target.value })}/>
