@@ -128,12 +128,12 @@ export default function FormasPagamento() {
           <CardDescription>Cadastre, edite ou desative formas de pagamento.</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center gap-2 pb-4">
+          {/* <div className="flex items-center gap-2 pb-4">
             <div className="relative">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input placeholder="Buscar..." className="pl-8 w-[300px]" />
             </div>
-          </div>
+          </div> */}
           {loading ? (
             <p>Carregando...</p>
           ) : (
